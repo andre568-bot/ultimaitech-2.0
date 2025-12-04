@@ -907,3 +907,56 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+/* About Page */
+.about-section {
+    padding-top: 140px;
+    padding-bottom: 5rem;
+    background: var(--color-bg);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff 20%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.about-block {
+    margin-bottom: 4rem;
+}
+
+.about-block h2 {
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.about-block p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-block p:last-child {
+    margin-bottom: 0;
+}
