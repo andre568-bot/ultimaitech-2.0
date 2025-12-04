@@ -960,3 +960,66 @@ textarea.form-control {
 .about-block p:last-child {
     margin-bottom: 0;
 }
+
+/* Legal Pages (Privacy, Security) */
+.legal-section {
+    padding-top: 140px;
+    padding-bottom: 5rem;
+    background: var(--color-bg);
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.legal-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff 20%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.legal-intro {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.legal-block {
+    margin-bottom: 3rem;
+}
+
+.legal-block h2 {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.legal-block h3 {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.legal-block p,
+.legal-block li {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.legal-block ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}

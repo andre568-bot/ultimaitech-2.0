@@ -215,6 +215,50 @@ const translations = {
                 text2: "As a founder-led studio, clients work directly with Andre—the person who designs, builds, and iterates their AI solutions - without layers of handoffs or account management. This keeps UltimAItech fast, flexible, and deeply invested in every project’s outcome."
             }
         },
+        security: {
+            title: "Security at UltimAItech",
+            intro: "We take the security of your data and your guests' information seriously. Our infrastructure is built with enterprise-grade security standards.",
+            infrastructure: {
+                title: "Infrastructure & Hosting",
+                text: "Our services are hosted on secure, industry-leading cloud providers located within the European Union. We utilize automated scaling and redundancy to ensure high availability and reliability for your websites and chatbots."
+            },
+            encryption: {
+                title: "Data Encryption",
+                text: "All data transmitted between your users and our services is encrypted using TLS 1.3 (Transport Layer Security). Data at rest is encrypted using AES-256 standards, ensuring that sensitive information remains protected at all times."
+            },
+            gdpr: {
+                title: "GDPR Compliance",
+                text: "We are fully committed to complying with the General Data Protection Regulation (GDPR). We act as a data processor for our clients, providing all necessary Data Processing Agreements (DPAs) and ensuring that your guests' rights are respected."
+            },
+            access: {
+                title: "Access Control",
+                text: "Access to our internal systems is strictly controlled and limited to authorized personnel only. We employ multi-factor authentication (MFA) and follow the principle of least privilege to minimize security risks."
+            }
+        },
+        privacy: {
+            title: "Privacy Policy",
+            intro: "We value your privacy and are committed to protecting your personal data. This policy outlines how we collect, use, and safeguard your information.",
+            collection: {
+                title: "Data Collection",
+                text: "We collect information that you provide directly to us, such as when you create an account, request a proposal, or communicate with our support team. This may include your name, email address, company details, and payment information."
+            },
+            usage: {
+                title: "How We Use Data",
+                text: "We use your data to provide, maintain, and improve our services, process transactions, and communicate with you about updates, security alerts, and support messages. We do not sell your personal data to third parties."
+            },
+            rights: {
+                title: "Your Rights",
+                text: "Under GDPR, you have the right to access, correct, transfer, or delete your personal data. You may also object to the processing of your data or request restrictions on its processing. To exercise these rights, please contact us."
+            },
+            cookies: {
+                title: "Cookies",
+                text: "We use cookies to enhance your experience on our website, analyze usage patterns, and ensure the security of our services. You can control cookie preferences through your browser settings."
+            },
+            contact: {
+                title: "Contact Us",
+                text: "If you have any questions about this Privacy Policy or our data practices, please contact us at privacy@ultimaitech.com."
+            }
+        },
         footer: {
             product: "Product",
             company: "Company",
@@ -453,6 +497,50 @@ const translations = {
                 text2: "Als gründergeführtes Studio arbeiten Kunden direkt mit Andre—der Person, die ihre KI-Lösungen entwirft, baut und iteriert—ohne Schichten von Übergaben oder Account Management. Dies hält UltimAItech schnell, flexibel und tief in das Ergebnis jedes Projekts investiert."
             }
         },
+        security: {
+            title: "Sicherheit bei UltimAItech",
+            intro: "Wir nehmen die Sicherheit Ihrer Daten und der Informationen Ihrer Gäste ernst. Unsere Infrastruktur basiert auf Sicherheitsstandards der Enterprise-Klasse.",
+            infrastructure: {
+                title: "Infrastruktur & Hosting",
+                text: "Unsere Dienste werden bei sicheren, branchenführenden Cloud-Anbietern innerhalb der Europäischen Union gehostet. Wir nutzen automatisierte Skalierung und Redundanz, um eine hohe Verfügbarkeit und Zuverlässigkeit für Ihre Websites und Chatbots zu gewährleisten."
+            },
+            encryption: {
+                title: "Datenverschlüsselung",
+                text: "Alle Daten, die zwischen Ihren Benutzern und unseren Diensten übertragen werden, sind mit TLS 1.3 (Transport Layer Security) verschlüsselt. Ruhende Daten werden mit AES-256-Standards verschlüsselt, um sicherzustellen, dass sensible Informationen jederzeit geschützt bleiben."
+            },
+            gdpr: {
+                title: "DSGVO-Konformität",
+                text: "Wir verpflichten uns voll und ganz zur Einhaltung der Datenschutz-Grundverordnung (DSGVO). Wir agieren als Auftragsverarbeiter für unsere Kunden, stellen alle erforderlichen Auftragsverarbeitungsverträge (AVV) bereit und stellen sicher, dass die Rechte Ihrer Gäste gewahrt bleiben."
+            },
+            access: {
+                title: "Zugriffskontrolle",
+                text: "Der Zugriff auf unsere internen Systeme ist streng kontrolliert und auf autorisiertes Personal beschränkt. Wir verwenden Multi-Faktor-Authentifizierung (MFA) und folgen dem Prinzip der geringsten Rechte, um Sicherheitsrisiken zu minimieren."
+            }
+        },
+        privacy: {
+            title: "Datenschutzerklärung",
+            intro: "Wir schätzen Ihre Privatsphäre und verpflichten uns zum Schutz Ihrer persönlichen Daten. Diese Richtlinie beschreibt, wie wir Ihre Informationen sammeln, verwenden und schützen.",
+            collection: {
+                title: "Datenerfassung",
+                text: "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen, z. B. wenn Sie ein Konto erstellen, ein Angebot anfordern oder mit unserem Support-Team kommunizieren. Dies kann Ihren Namen, Ihre E-Mail-Adresse, Firmendetails und Zahlungsinformationen umfassen."
+            },
+            usage: {
+                title: "Wie wir Daten verwenden",
+                text: "Wir verwenden Ihre Daten, um unsere Dienste bereitzustellen, zu warten und zu verbessern, Transaktionen zu verarbeiten und mit Ihnen über Updates, Sicherheitswarnungen und Support-Nachrichten zu kommunizieren. Wir verkaufen Ihre persönlichen Daten nicht an Dritte."
+            },
+            rights: {
+                title: "Ihre Rechte",
+                text: "Gemäß DSGVO haben Sie das Recht, auf Ihre persönlichen Daten zuzugreifen, diese zu korrigieren, zu übertragen oder zu löschen. Sie können auch der Verarbeitung Ihrer Daten widersprechen oder Einschränkungen der Verarbeitung verlangen. Um diese Rechte auszuüben, kontaktieren Sie uns bitte."
+            },
+            cookies: {
+                title: "Cookies",
+                text: "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern, Nutzungsmuster zu analysieren und die Sicherheit unserer Dienste zu gewährleisten. Sie können Ihre Cookie-Einstellungen über Ihre Browsereinstellungen steuern."
+            },
+            contact: {
+                title: "Kontaktieren Sie uns",
+                text: "Wenn Sie Fragen zu dieser Datenschutzerklärung oder unseren Datenpraktiken haben, kontaktieren Sie uns bitte unter privacy@ultimaitech.com."
+            }
+        },
         footer: {
             product: "Produkt",
             company: "Unternehmen",
@@ -689,6 +777,50 @@ const translations = {
                 title: "Over de oprichter",
                 text1: "UltimAItech is opgericht door Andre Hassler, een meertalige systeemingenieur en AI-ontwikkelaar met een achtergrond in IT-operaties, chatbotplatforms en datagestuurde procesoptimalisatie. Jarenlang werken over teams en landen heen vormde een eenvoudige filosofie: technologie moet natuurlijk aanvoelen, zelfs als de systemen erachter complex zijn.",
                 text2: "Als door de oprichter geleide studio werken klanten rechtstreeks samen met Andre—de persoon die hun AI-oplossingen ontwerpt, bouwt en itereert—zonder lagen van overdrachten of accountmanagement. Dit houdt UltimAItech snel, flexibel en diep betrokken bij de uitkomst van elk project."
+            }
+        },
+        security: {
+            title: "Beveiliging bij UltimAItech",
+            intro: "Wij nemen de beveiliging van uw gegevens en de informatie van uw gasten serieus. Onze infrastructuur is gebouwd met beveiligingsstandaarden van ondernemingsklasse.",
+            infrastructure: {
+                title: "Infrastructuur & Hosting",
+                text: "Onze diensten worden gehost bij veilige, toonaangevende cloudproviders binnen de Europese Unie. Wij maken gebruik van geautomatiseerde schaling en redundantie om een hoge beschikbaarheid en betrouwbaarheid voor uw websites en chatbots te garanderen."
+            },
+            encryption: {
+                title: "Gegevensversleuteling",
+                text: "Alle gegevens die worden verzonden tussen uw gebruikers en onze diensten zijn versleuteld met TLS 1.3 (Transport Layer Security). Gegevens in rust zijn versleuteld met AES-256-standaarden, zodat gevoelige informatie te allen tijde beschermd blijft."
+            },
+            gdpr: {
+                title: "AVG-naleving",
+                text: "Wij zetten ons volledig in voor de naleving van de Algemene Verordening Gegevensbescherming (AVG). Wij treden op als gegevensverwerker voor onze klanten, bieden alle noodzakelijke Verwerkersovereenkomsten (VWO's) en zorgen ervoor dat de rechten van uw gasten worden gerespecteerd."
+            },
+            access: {
+                title: "Toegangscontrole",
+                text: "Toegang tot onze interne systemen is strikt gecontroleerd en beperkt tot geautoriseerd personeel. Wij gebruiken multi-factor authenticatie (MFA) en volgen het principe van de minste privileges om beveiligingsrisico's te minimaliseren."
+            }
+        },
+        privacy: {
+            title: "Privacybeleid",
+            intro: "Wij waarderen uw privacy en zetten ons in voor de bescherming van uw persoonsgegevens. Dit beleid beschrijft hoe wij uw informatie verzamelen, gebruiken en beveiligen.",
+            collection: {
+                title: "Gegevensverzameling",
+                text: "Wij verzamelen informatie die u rechtstreeks aan ons verstrekt, zoals wanneer u een account aanmaakt, een voorstel aanvraagt of communiceert met ons ondersteuningsteam. Dit kan uw naam, e-mailadres, bedrijfsgegevens en betalingsinformatie omvatten."
+            },
+            usage: {
+                title: "Hoe wij gegevens gebruiken",
+                text: "Wij gebruiken uw gegevens om onze diensten te leveren, te onderhouden en te verbeteren, transacties te verwerken en met u te communiceren over updates, beveiligingswaarschuwingen en ondersteuningsberichten. Wij verkopen uw persoonsgegevens niet aan derden."
+            },
+            rights: {
+                title: "Uw Rechten",
+                text: "Onder de AVG heeft u het recht om uw persoonsgegevens in te zien, te corrigeren, over te dragen of te verwijderen. U kunt ook bezwaar maken tegen de verwerking van uw gegevens of beperkingen op de verwerking ervan aanvragen. Neem contact met ons op om deze rechten uit te oefenen."
+            },
+            cookies: {
+                title: "Cookies",
+                text: "Wij gebruiken cookies om uw ervaring op onze website te verbeteren, gebruikspatronen te analyseren en de veiligheid van onze diensten te garanderen. U kunt cookievoorkeuren beheren via uw browserinstellingen."
+            },
+            contact: {
+                title: "Neem contact op",
+                text: "Als u vragen heeft over dit Privacybeleid of onze gegevenspraktijken, neem dan contact met ons op via privacy@ultimaitech.com."
             }
         },
         footer: {
