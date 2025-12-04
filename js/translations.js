@@ -147,12 +147,12 @@ const translations = {
                 subtitle: "The ultimate package: a new website seamlessly integrated with your custom AI.",
                 starter: {
                     title: "Starter Bundle",
-                    period: "save €250",
+                    period: "setup + €349/mo",
                     features: ["Essential Website", "Basic Chatbot Integration", "Mobile Optimized", "Basic SEO", "3 Months Support"]
                 },
                 growth: {
                     title: "Growth Bundle",
-                    period: "save €400",
+                    period: "setup + €599/mo",
                     features: ["Professional Website", "Smart Concierge Chatbot", "Seamless Integration", "Multilingual Setup", "6 Months Support"]
                 },
                 ultimate: {
@@ -360,12 +360,12 @@ const translations = {
                 subtitle: "Das ultimative Paket: eine neue Website nahtlos integriert mit Ihrer eigenen KI.",
                 starter: {
                     title: "Starter Paket",
-                    period: "Sparen Sie €250",
+                    period: "Einrichtung + €349/Monat",
                     features: ["Essential Website", "Basis Chatbot-Integration", "Mobil optimiert", "Basis SEO", "3 Monate Support"]
                 },
                 growth: {
                     title: "Wachstums-Paket",
-                    period: "Sparen Sie €400",
+                    period: "Einrichtung + €599/Monat",
                     features: ["Professional Website", "Smart Concierge Chatbot", "Nahtlose Integration", "Mehrsprachiges Setup", "6 Monate Support"]
                 },
                 ultimate: {
@@ -573,12 +573,12 @@ const translations = {
                 subtitle: "Het ultieme pakket: een nieuwe website naadloos geïntegreerd met uw eigen aangepaste AI.",
                 starter: {
                     title: "Starter Bundel",
-                    period: "bespaar €250",
+                    period: "installatie + €349/mnd",
                     features: ["Essential Website", "Basis Chatbot Integratie", "Mobiel Geoptimaliseerd", "Basis SEO", "3 Maanden Ondersteuning"]
                 },
                 growth: {
                     title: "Groei Bundel",
-                    period: "bespaar €400",
+                    period: "installatie + €599/mnd",
                     features: ["Professional Website", "Smart Concierge Chatbot", "Naadloze Integratie", "Meertalige Setup", "6 Maanden Ondersteuning"]
                 },
                 ultimate: {
