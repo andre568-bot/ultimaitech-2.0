@@ -190,6 +190,30 @@ const translations = {
                 }
             }
         },
+        about: {
+            title: "About UltimAItech",
+            intro: "UltimAItech is a founder-led AI studio that helps hospitality businesses design human-centric, revenue-generating experiences with intelligent automation.",
+            who: {
+                title: "Who we are",
+                text1: "UltimAItech is an independent AI studio focused on the hospitality industry, combining deep technical expertise with a strong feel for guest experience. The studio helps hotels, restaurants, and experience providers turn complex operations into smooth, personal, and efficient journeys for their guests.",
+                text2: "Rather than pushing generic tools, UltimAItech works alongside your team to understand how you welcome, serve, and retain guests, then designs AI workflows that fit into your existing way of working. The goal is simple: use AI to reduce friction for your staff and create more memorable moments for your guests."
+            },
+            believe: {
+                title: "What we believe",
+                text1: "Hospitality is, above all, human. AI should support that human connection by freeing staff from repetitive tasks so they can be more present, not by replacing the people who make your brand special.",
+                text2: "UltimAItech believes the best technology is invisible: automations that quietly handle the background work, while your team stays in control of every important decision and interaction. Every solution is designed to be explainable, configurable, and measurable, so you always know how it impacts your guests and your bottom line."
+            },
+            work: {
+                title: "How we work",
+                text1: "Every collaboration starts with a deep-dive into your guest journey, operational bottlenecks, and data landscape. From there, UltimAItech designs lightweight pilots that prove value quickly, then scales what works across channels, properties, or brands.",
+                text2: "You can expect clear communication, practical documentation, and solutions that your existing teams can actually run and maintain. UltimAItech prefers long-term partnerships over one-off projects, staying close as your needs, tools, and guests evolve."
+            },
+            founder: {
+                title: "About the founder",
+                text1: "UltimAItech was founded by Andre Hassler, a multilingual systems engineer and AI developer with a background in IT operations, chatbot platforms, and data-driven process optimization. Years of working across teams and countries shaped a simple philosophy: technology should feel natural to use, even when the systems behind it are complex.",
+                text2: "As a founder-led studio, clients work directly with Andre—the person who designs, builds, and iterates their AI solutions - without layers of handoffs or account management. This keeps UltimAItech fast, flexible, and deeply invested in every project’s outcome."
+            }
+        },
         footer: {
             product: "Product",
             company: "Company",
@@ -403,6 +427,30 @@ const translations = {
                 }
             }
         },
+        about: {
+            title: "About UltimAItech",
+            intro: "UltimAItech is a founder-led AI studio that helps hospitality businesses design human-centric, revenue-generating experiences with intelligent automation.",
+            who: {
+                title: "Who we are",
+                text1: "UltimAItech is an independent AI studio focused on the hospitality industry, combining deep technical expertise with a strong feel for guest experience. The studio helps hotels, restaurants, and experience providers turn complex operations into smooth, personal, and efficient journeys for their guests.",
+                text2: "Rather than pushing generic tools, UltimAItech works alongside your team to understand how you welcome, serve, and retain guests, then designs AI workflows that fit into your existing way of working. The goal is simple: use AI to reduce friction for your staff and create more memorable moments for your guests."
+            },
+            believe: {
+                title: "What we believe",
+                text1: "Hospitality is, above all, human. AI should support that human connection by freeing staff from repetitive tasks so they can be more present, not by replacing the people who make your brand special.",
+                text2: "UltimAItech believes the best technology is invisible: automations that quietly handle the background work, while your team stays in control of every important decision and interaction. Every solution is designed to be explainable, configurable, and measurable, so you always know how it impacts your guests and your bottom line."
+            },
+            work: {
+                title: "How we work",
+                text1: "Every collaboration starts with a deep-dive into your guest journey, operational bottlenecks, and data landscape. From there, UltimAItech designs lightweight pilots that prove value quickly, then scales what works across channels, properties, or brands.",
+                text2: "You can expect clear communication, practical documentation, and solutions that your existing teams can actually run and maintain. UltimAItech prefers long-term partnerships over one-off projects, staying close as your needs, tools, and guests evolve."
+            },
+            founder: {
+                title: "About the founder",
+                text1: "UltimAItech was founded by Andre Hassler, a multilingual systems engineer and AI developer with a background in IT operations, chatbot platforms, and data-driven process optimization. Years of working across teams and countries shaped a simple philosophy: technology should feel natural to use, even when the systems behind it are complex.",
+                text2: "As a founder-led studio, clients work directly with Andre—the person who designs, builds, and iterates their AI solutions - without layers of handoffs or account management. This keeps UltimAItech fast, flexible, and deeply invested in every project’s outcome."
+            }
+        },
         footer: {
             product: "Produkt",
             company: "Unternehmen",
@@ -614,6 +662,30 @@ const translations = {
                     bundle: "Complete Digitale Bundel",
                     other: "Overig"
                 }
+            }
+        },
+        about: {
+            title: "About UltimAItech",
+            intro: "UltimAItech is a founder-led AI studio that helps hospitality businesses design human-centric, revenue-generating experiences with intelligent automation.",
+            who: {
+                title: "Who we are",
+                text1: "UltimAItech is an independent AI studio focused on the hospitality industry, combining deep technical expertise with a strong feel for guest experience. The studio helps hotels, restaurants, and experience providers turn complex operations into smooth, personal, and efficient journeys for their guests.",
+                text2: "Rather than pushing generic tools, UltimAItech works alongside your team to understand how you welcome, serve, and retain guests, then designs AI workflows that fit into your existing way of working. The goal is simple: use AI to reduce friction for your staff and create more memorable moments for your guests."
+            },
+            believe: {
+                title: "What we believe",
+                text1: "Hospitality is, above all, human. AI should support that human connection by freeing staff from repetitive tasks so they can be more present, not by replacing the people who make your brand special.",
+                text2: "UltimAItech believes the best technology is invisible: automations that quietly handle the background work, while your team stays in control of every important decision and interaction. Every solution is designed to be explainable, configurable, and measurable, so you always know how it impacts your guests and your bottom line."
+            },
+            work: {
+                title: "How we work",
+                text1: "Every collaboration starts with a deep-dive into your guest journey, operational bottlenecks, and data landscape. From there, UltimAItech designs lightweight pilots that prove value quickly, then scales what works across channels, properties, or brands.",
+                text2: "You can expect clear communication, practical documentation, and solutions that your existing teams can actually run and maintain. UltimAItech prefers long-term partnerships over one-off projects, staying close as your needs, tools, and guests evolve."
+            },
+            founder: {
+                title: "About the founder",
+                text1: "UltimAItech was founded by Andre Hassler, a multilingual systems engineer and AI developer with a background in IT operations, chatbot platforms, and data-driven process optimization. Years of working across teams and countries shaped a simple philosophy: technology should feel natural to use, even when the systems behind it are complex.",
+                text2: "As a founder-led studio, clients work directly with Andre—the person who designs, builds, and iterates their AI solutions - without layers of handoffs or account management. This keeps UltimAItech fast, flexible, and deeply invested in every project’s outcome."
             }
         },
         footer: {
