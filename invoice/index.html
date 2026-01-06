@@ -913,6 +913,27 @@
             addBtn.style.display = 'none';
             removeBtns.forEach(btn => btn.style.display = 'none');
 
+            // Temporarily replace gradient text with SVG for proper PDF rendering
+            const invoiceTitle = document.querySelector('.invoice-title');
+            const originalTitleHTML = invoiceTitle.innerHTML;
+            const titleText = invoiceTitle.textContent;
+
+            // Create SVG gradient text
+            invoiceTitle.innerHTML = `
+                <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"/>
+                            <stop offset="50%" style="stop-color:#8b5cf6"/>
+                            <stop offset="100%" style="stop-color:#ec4899"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="url(#titleGradient)">${titleText}</text>
+                </svg>
+            `;
+            invoiceTitle.style.background = 'none';
+            invoiceTitle.style.webkitTextFillColor = 'transparent';
+
             const opt = {
                 margin: 0,
                 filename: invoiceNumber + '.pdf',
@@ -930,6 +951,11 @@
             };
 
             html2pdf().set(opt).from(element).save().then(() => {
+                // Restore original title
+                invoiceTitle.innerHTML = originalTitleHTML;
+                invoiceTitle.style.background = '';
+                invoiceTitle.style.webkitTextFillColor = '';
+
                 // Restore buttons
                 addBtn.style.display = '';
                 removeBtns.forEach(btn => btn.style.display = '');
