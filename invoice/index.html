@@ -879,8 +879,8 @@
             });
 
             const vatRate = 0.21;
-            const vat = subtotal * vatRate;
-            const total = subtotal + vat;
+            const vat = Math.floor(subtotal * vatRate * 100) / 100; // Round down to 2 decimals
+            const total = Math.floor((subtotal + vat) * 100) / 100; // Round down to 2 decimals
 
             document.getElementById('subtotal').value = currencySymbol + subtotal.toFixed(2);
             document.getElementById('vat').value = currencySymbol + vat.toFixed(2);
