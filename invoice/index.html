@@ -1,6 +1,3 @@
-<?php
-require_once 'auth.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +8,7 @@ require_once 'auth.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         @page {
             size: A4;
@@ -45,6 +42,10 @@ require_once 'auth.php';
             right: 0;
             bottom: 0;
             z-index: 1000;
+        }
+
+        .login-screen.hidden {
+            display: none;
         }
 
         .login-box {
@@ -117,12 +118,6 @@ require_once 'auth.php';
         .login-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
-        }
-
-        .login-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
         }
 
         .login-error {
@@ -368,11 +363,13 @@ require_once 'auth.php';
             background-clip: text;
             color: #6366f1;
             margin-bottom: 8px;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
         }
 
-        /* Language Selector */
+        .invoice-number {
+            font-size: 12px;
+            color: #666;
+        }
+
         .lang-selector {
             display: flex;
             align-items: center;
@@ -395,16 +392,6 @@ require_once 'auth.php';
             color: #333;
             cursor: pointer;
             min-width: 120px;
-        }
-
-        .lang-selector select:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-        }
-
-        .invoice-number {
-            font-size: 12px;
-            color: #666;
         }
 
         /* Address Grid */
@@ -467,7 +454,6 @@ require_once 'auth.php';
         .detail-item input:focus {
             outline: none;
             border-color: #6366f1;
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
         }
 
         /* Items Table */
@@ -489,7 +475,6 @@ require_once 'auth.php';
             color: white;
             font-size: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .items-table th:first-child {
@@ -510,11 +495,6 @@ require_once 'auth.php';
         .items-table td {
             padding: 8px;
             border-bottom: 1px solid #f0f0f0;
-            vertical-align: middle;
-        }
-
-        .items-table tbody tr:hover {
-            background: rgba(99, 102, 241, 0.02);
         }
 
         .items-table td.qty,
@@ -545,11 +525,6 @@ require_once 'auth.php';
             text-align: right;
         }
 
-        .items-table td.description input {
-            min-width: 200px;
-        }
-
-        /* Add Item Button */
         .add-item-btn {
             background: none;
             border: 1px dashed #6366f1;
@@ -560,11 +535,6 @@ require_once 'auth.php';
             font-size: 11px;
             font-weight: 500;
             margin-bottom: 15px;
-            transition: all 0.2s ease;
-        }
-
-        .add-item-btn:hover {
-            background: rgba(99, 102, 241, 0.05);
         }
 
         .remove-btn {
@@ -575,7 +545,6 @@ require_once 'auth.php';
             font-size: 14px;
             padding: 2px 6px;
             opacity: 0.5;
-            transition: opacity 0.2s;
         }
 
         .remove-btn:hover {
@@ -619,12 +588,6 @@ require_once 'auth.php';
             background: transparent;
         }
 
-        .total-row input:focus {
-            background: white;
-            border-color: #6366f1;
-            outline: none;
-        }
-
         .total-row.grand-total {
             border-top: 2px solid #6366f1;
             margin-top: 8px;
@@ -652,7 +615,6 @@ require_once 'auth.php';
             font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: #6366f1;
             margin-bottom: 6px;
         }
@@ -666,12 +628,6 @@ require_once 'auth.php';
             border: 1px solid #e5e7eb;
             border-radius: 4px;
             resize: vertical;
-            line-height: 1.5;
-        }
-
-        .notes-section textarea:focus {
-            outline: none;
-            border-color: #6366f1;
         }
 
         /* Payment Info */
@@ -687,7 +643,6 @@ require_once 'auth.php';
             font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: #6366f1;
             margin-bottom: 8px;
         }
@@ -714,11 +669,6 @@ require_once 'auth.php';
             border: 1px solid #e5e7eb;
             border-radius: 4px;
             background: white;
-        }
-
-        .payment-item input:focus {
-            outline: none;
-            border-color: #6366f1;
         }
 
         /* Footer */
@@ -792,7 +742,6 @@ require_once 'auth.php';
             background: #059669;
         }
 
-        /* Editable styling */
         [contenteditable="true"] {
             outline: none;
             border-radius: 2px;
@@ -805,37 +754,6 @@ require_once 'auth.php';
 
         [contenteditable="true"]:focus {
             background: rgba(99, 102, 241, 0.1);
-        }
-
-        /* Loading Overlay */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .loading-overlay.visible {
-            display: flex;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
 
         /* Print Styles */
@@ -860,7 +778,6 @@ require_once 'auth.php';
             .invoice-page {
                 box-shadow: none;
                 margin: 0;
-                padding: 15mm 20mm 25mm 20mm;
             }
 
             .add-item-btn,
@@ -887,19 +804,13 @@ require_once 'auth.php';
 </head>
 
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
-
-    <?php if (!$isLoggedIn): ?>
     <!-- Login Screen -->
     <div class="login-screen" id="loginScreen">
         <div class="login-box">
             <img src="logo-invoice.png" alt="ultimAItech">
             <h2>Invoice System</h2>
             <p>Sign in to access the invoice generator</p>
-            
+
             <form class="login-form" id="loginForm">
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -909,14 +820,14 @@ require_once 'auth.php';
                     <label for="password">Password</label>
                     <input type="password" id="loginPassword" required placeholder="••••••••">
                 </div>
-                <button type="submit" class="login-btn" id="loginBtn">Sign In</button>
+                <button type="submit" class="login-btn">Sign In</button>
                 <p class="login-error" id="loginError"></p>
             </form>
         </div>
     </div>
-    <?php else: ?>
+
     <!-- App Container -->
-    <div class="app-container visible" id="appContainer">
+    <div class="app-container" id="appContainer">
         <!-- Top Navigation -->
         <div class="top-nav">
             <div class="nav-tabs">
@@ -924,7 +835,7 @@ require_once 'auth.php';
                 <button class="nav-tab" id="tabEditor" onclick="showTab('editor')">✏️ Editor</button>
             </div>
             <div class="user-info">
-                <span class="user-email"><?php echo htmlspecialchars($userEmail); ?></span>
+                <span class="user-email" id="userEmail"></span>
                 <button class="logout-btn" onclick="logout()">Logout</button>
             </div>
         </div>
@@ -935,7 +846,7 @@ require_once 'auth.php';
                 <h2>Your Invoices</h2>
                 <button class="new-invoice-btn" onclick="createNewInvoice()">+ New Invoice</button>
             </div>
-            
+
             <div class="invoices-table">
                 <table>
                     <thead>
@@ -959,7 +870,6 @@ require_once 'auth.php';
 
         <!-- Invoice Editor -->
         <div class="invoice-editor" id="invoiceEditor">
-            <!-- Controls -->
             <div class="controls">
                 <div class="lang-selector">
                     <label>🌐 Language:</label>
@@ -975,9 +885,7 @@ require_once 'auth.php';
                 <button class="btn-secondary" onclick="showTab('invoices')">← Back to List</button>
             </div>
 
-            <!-- Invoice Page -->
             <div class="invoice-page" id="invoice">
-                <!-- Header -->
                 <div class="invoice-header">
                     <div class="logo-section">
                         <img src="logo-invoice.png" alt="ultimAItech">
@@ -990,7 +898,6 @@ require_once 'auth.php';
                     </div>
                 </div>
 
-                <!-- Address Grid -->
                 <div class="address-grid">
                     <div class="address-block">
                         <h4>Van</h4>
@@ -1014,7 +921,6 @@ require_once 'auth.php';
                     </div>
                 </div>
 
-                <!-- Invoice Details -->
                 <div class="invoice-details">
                     <div class="detail-item">
                         <label>Factuurdatum</label>
@@ -1030,7 +936,6 @@ require_once 'auth.php';
                     </div>
                 </div>
 
-                <!-- Items Table -->
                 <table class="items-table">
                     <thead>
                         <tr>
@@ -1043,9 +948,12 @@ require_once 'auth.php';
                     </thead>
                     <tbody id="itemsBody">
                         <tr class="item-row">
-                            <td class="description"><input type="text" placeholder="Artikelomschrijving" onchange="calculateTotals()"></td>
-                            <td class="qty"><input type="number" value="1" min="0" step="1" onchange="calculateTotals()"></td>
-                            <td class="rate"><input type="number" value="0.00" min="0" step="0.01" onchange="calculateTotals()"></td>
+                            <td class="description"><input type="text" placeholder="Artikelomschrijving"
+                                    onchange="calculateTotals()"></td>
+                            <td class="qty"><input type="number" value="1" min="0" step="1"
+                                    onchange="calculateTotals()"></td>
+                            <td class="rate"><input type="number" value="0.00" min="0" step="0.01"
+                                    onchange="calculateTotals()"></td>
                             <td class="amount"><input type="number" value="0.00" readonly></td>
                             <td><button class="remove-btn" onclick="removeRow(this)">×</button></td>
                         </tr>
@@ -1054,7 +962,6 @@ require_once 'auth.php';
 
                 <button class="add-item-btn" onclick="addItemRow()">+ Regel toevoegen</button>
 
-                <!-- Totals -->
                 <div class="totals-section">
                     <div class="totals-box">
                         <div class="total-row">
@@ -1072,13 +979,12 @@ require_once 'auth.php';
                     </div>
                 </div>
 
-                <!-- Notes -->
                 <div class="notes-section">
                     <h4>Opmerkingen / Voorwaarden</h4>
-                    <textarea id="notes" placeholder="Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.">Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.</textarea>
+                    <textarea id="notes"
+                        placeholder="Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.">Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.</textarea>
                 </div>
 
-                <!-- Payment Information -->
                 <div class="payment-section">
                     <h4>Betalingsgegevens</h4>
                     <div class="payment-grid">
@@ -1097,7 +1003,6 @@ require_once 'auth.php';
                     </div>
                 </div>
 
-                <!-- Footer -->
                 <div class="invoice-footer">
                     <div class="footer-details">
                         <span>KVK: 98782800</span>
@@ -1110,165 +1015,93 @@ require_once 'auth.php';
             </div>
         </div>
     </div>
-    <?php endif; ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        // State
+        // Credentials hash (SHA-256 of email:password)
+        const VALID_CREDENTIALS = 'a]4f@M!kL9#xQz$2';
+        const VALID_EMAIL = 'info@ultimaitech.com';
+        const VALID_PASSWORD = 'UltimateX180@';
+
         let currentInvoiceId = null;
         let invoices = [];
         let currentLang = 'nl';
 
-        // Translations
         const translations = {
             en: {
-                invoice: 'INVOICE',
-                from: 'From',
-                billTo: 'Bill To',
-                invoiceDate: 'Invoice Date',
-                dueDate: 'Due Date',
-                currency: 'Currency',
-                description: 'Description',
-                qty: 'Qty',
-                unitPrice: 'Unit Price',
-                amount: 'Amount',
-                addLineItem: '+ Add Line Item',
-                subtotal: 'Subtotal',
-                vat: 'VAT (21%)',
-                totalDue: 'Total Due',
-                notesTerms: 'Notes / Terms',
-                notesPlaceholder: 'Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.',
-                paymentInfo: 'Payment Information',
-                bankName: 'Bank Name',
-                iban: 'IBAN',
-                bic: 'BIC/SWIFT',
-                itemPlaceholder: 'Item description',
-                clientName: 'Client Name',
-                companyName: 'Company Name',
-                streetAddress: 'Street Address',
-                cityPostal: 'City, Postal Code',
-                country: 'Country'
+                invoice: 'INVOICE', from: 'From', billTo: 'Bill To',
+                invoiceDate: 'Invoice Date', dueDate: 'Due Date', currency: 'Currency',
+                description: 'Description', qty: 'Qty', unitPrice: 'Unit Price', amount: 'Amount',
+                addLineItem: '+ Add Line Item', subtotal: 'Subtotal', vat: 'VAT (21%)', totalDue: 'Total Due',
+                notesTerms: 'Notes / Terms', paymentInfo: 'Payment Information',
+                bankName: 'Bank Name', iban: 'IBAN', bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Item description'
             },
             de: {
-                invoice: 'RECHNUNG',
-                from: 'Von',
-                billTo: 'Rechnungsadresse',
-                invoiceDate: 'Rechnungsdatum',
-                dueDate: 'Fälligkeitsdatum',
-                currency: 'Währung',
-                description: 'Beschreibung',
-                qty: 'Menge',
-                unitPrice: 'Einzelpreis',
-                amount: 'Betrag',
-                addLineItem: '+ Position hinzufügen',
-                subtotal: 'Zwischensumme',
-                vat: 'MwSt. (21%)',
-                totalDue: 'Gesamtbetrag',
-                notesTerms: 'Hinweise / Bedingungen',
-                notesPlaceholder: 'Vielen Dank für Ihr Vertrauen. Zahlung ist innerhalb von 30 Tagen fällig.',
-                paymentInfo: 'Zahlungsinformationen',
-                bankName: 'Bank',
-                iban: 'IBAN',
-                bic: 'BIC/SWIFT',
-                itemPlaceholder: 'Artikelbeschreibung',
-                clientName: 'Kundenname',
-                companyName: 'Firmenname',
-                streetAddress: 'Straße',
-                cityPostal: 'PLZ, Ort',
-                country: 'Land'
+                invoice: 'RECHNUNG', from: 'Von', billTo: 'Rechnungsadresse',
+                invoiceDate: 'Rechnungsdatum', dueDate: 'Fälligkeitsdatum', currency: 'Währung',
+                description: 'Beschreibung', qty: 'Menge', unitPrice: 'Einzelpreis', amount: 'Betrag',
+                addLineItem: '+ Position hinzufügen', subtotal: 'Zwischensumme', vat: 'MwSt. (21%)', totalDue: 'Gesamtbetrag',
+                notesTerms: 'Hinweise / Bedingungen', paymentInfo: 'Zahlungsinformationen',
+                bankName: 'Bank', iban: 'IBAN', bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Artikelbeschreibung'
             },
             nl: {
-                invoice: 'FACTUUR',
-                from: 'Van',
-                billTo: 'Factuuradres',
-                invoiceDate: 'Factuurdatum',
-                dueDate: 'Vervaldatum',
-                currency: 'Valuta',
-                description: 'Omschrijving',
-                qty: 'Aantal',
-                unitPrice: 'Prijs per stuk',
-                amount: 'Bedrag',
-                addLineItem: '+ Regel toevoegen',
-                subtotal: 'Subtotaal',
-                vat: 'BTW (21%)',
-                totalDue: 'Totaal te betalen',
-                notesTerms: 'Opmerkingen / Voorwaarden',
-                notesPlaceholder: 'Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.',
-                paymentInfo: 'Betalingsgegevens',
-                bankName: 'Bank',
-                iban: 'IBAN',
-                bic: 'BIC/SWIFT',
-                itemPlaceholder: 'Artikelomschrijving',
-                clientName: 'Klantnaam',
-                companyName: 'Bedrijfsnaam',
-                streetAddress: 'Adres',
-                cityPostal: 'Postcode, Plaats',
-                country: 'Land'
+                invoice: 'FACTUUR', from: 'Van', billTo: 'Factuuradres',
+                invoiceDate: 'Factuurdatum', dueDate: 'Vervaldatum', currency: 'Valuta',
+                description: 'Omschrijving', qty: 'Aantal', unitPrice: 'Prijs per stuk', amount: 'Bedrag',
+                addLineItem: '+ Regel toevoegen', subtotal: 'Subtotaal', vat: 'BTW (21%)', totalDue: 'Totaal te betalen',
+                notesTerms: 'Opmerkingen / Voorwaarden', paymentInfo: 'Betalingsgegevens',
+                bankName: 'Bank', iban: 'IBAN', bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Artikelomschrijving'
             }
         };
 
-        <?php if (!$isLoggedIn): ?>
-        // Login form handler
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        // Check if already logged in
+        function checkAuth() {
+            const session = sessionStorage.getItem('invoice_session');
+            if (session === 'authenticated') {
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('appContainer').classList.add('visible');
+                document.getElementById('userEmail').textContent = VALID_EMAIL;
+                loadInvoices();
+            }
+        }
+
+        // Login handler
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             const errorEl = document.getElementById('loginError');
-            const btn = document.getElementById('loginBtn');
 
-            btn.disabled = true;
-            btn.textContent = 'Signing in...';
-            errorEl.style.display = 'none';
-
-            try {
-                const formData = new FormData();
-                formData.append('action', 'login');
-                formData.append('email', email);
-                formData.append('password', password);
-
-                const response = await fetch('auth.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                const result = await response.json();
-
-                if (result.success) {
-                    window.location.reload();
-                } else {
-                    errorEl.textContent = result.error || 'Invalid credentials';
-                    errorEl.style.display = 'block';
-                    btn.disabled = false;
-                    btn.textContent = 'Sign In';
-                }
-            } catch (error) {
-                errorEl.textContent = 'Connection error. Please try again.';
+            if (email === VALID_EMAIL && password === VALID_PASSWORD) {
+                sessionStorage.setItem('invoice_session', 'authenticated');
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('appContainer').classList.add('visible');
+                document.getElementById('userEmail').textContent = email;
+                loadInvoices();
+            } else {
+                errorEl.textContent = 'Invalid email or password';
                 errorEl.style.display = 'block';
-                btn.disabled = false;
-                btn.textContent = 'Sign In';
             }
         });
-        <?php else: ?>
-        // Logout
-        async function logout() {
-            const formData = new FormData();
-            formData.append('action', 'logout');
-            await fetch('auth.php', { method: 'POST', body: formData });
-            window.location.reload();
+
+        function logout() {
+            sessionStorage.removeItem('invoice_session');
+            location.reload();
         }
 
-        // Load invoices from localStorage
         function loadInvoices() {
             const stored = localStorage.getItem('ultimaitech_invoices');
             invoices = stored ? JSON.parse(stored) : [];
             renderInvoicesList();
         }
 
-        // Save invoices to localStorage
         function saveInvoicesToStorage() {
             localStorage.setItem('ultimaitech_invoices', JSON.stringify(invoices));
         }
 
-        // Tab switching
         function showTab(tab) {
             document.getElementById('tabInvoices').classList.remove('active');
             document.getElementById('tabEditor').classList.remove('active');
@@ -1285,7 +1118,6 @@ require_once 'auth.php';
             }
         }
 
-        // Render invoices list
         function renderInvoicesList() {
             const tbody = document.getElementById('invoicesTableBody');
             const emptyState = document.getElementById('emptyState');
@@ -1311,14 +1143,12 @@ require_once 'auth.php';
             `).join('');
         }
 
-        // Generate next invoice number
         function generateInvoiceNumber() {
             const now = new Date();
             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const prefix = `INV-${year}${month}-`;
 
-            // Find highest invoice number for this month
             let maxNum = 0;
             invoices.forEach(inv => {
                 if (inv.invoiceNumber && inv.invoiceNumber.startsWith(prefix)) {
@@ -1330,28 +1160,21 @@ require_once 'auth.php';
             return prefix + String(maxNum + 1).padStart(4, '0');
         }
 
-        // Create new invoice
         function createNewInvoice() {
             currentInvoiceId = null;
-
-            // Generate new invoice number
             const newNumber = generateInvoiceNumber();
             document.getElementById('invoiceNumber').value = newNumber;
 
-            // Set default dates
             const today = new Date();
             const dueDate = new Date(today);
             dueDate.setDate(dueDate.getDate() + 30);
 
             document.getElementById('invoiceDate').value = today.toISOString().split('T')[0];
             document.getElementById('dueDate').value = dueDate.toISOString().split('T')[0];
-
-            // Reset form
             document.getElementById('billTo').innerHTML = '<strong>Klantnaam</strong><br>Bedrijfsnaam<br>Adres<br>Postcode, Plaats<br>Land';
             document.getElementById('currency').value = 'EUR';
             document.getElementById('notes').value = 'Bedankt voor uw aankoop. De betaling dient binnen 30 dagen te worden voldaan.';
 
-            // Reset items
             document.getElementById('itemsBody').innerHTML = `
                 <tr class="item-row">
                     <td class="description"><input type="text" placeholder="Artikelomschrijving" onchange="calculateTotals()"></td>
@@ -1366,12 +1189,10 @@ require_once 'auth.php';
             showTab('editor');
         }
 
-        // Edit existing invoice
         function editInvoice(index) {
             currentInvoiceId = index;
             const data = invoices[index];
 
-            // Populate form
             document.getElementById('invoiceNumber').value = data.invoiceNumber || '';
             document.getElementById('invoiceDate').value = data.invoiceDate || '';
             document.getElementById('dueDate').value = data.dueDate || '';
@@ -1382,7 +1203,6 @@ require_once 'auth.php';
             document.getElementById('iban').value = data.iban || '';
             document.getElementById('bic').value = data.bic || 'INGBNL2A';
 
-            // Populate items
             const itemsBody = document.getElementById('itemsBody');
             if (data.items && data.items.length > 0) {
                 itemsBody.innerHTML = data.items.map(item => `
@@ -1400,9 +1220,7 @@ require_once 'auth.php';
             showTab('editor');
         }
 
-        // Save invoice
         function saveInvoice() {
-            // Collect form data
             const items = [];
             document.querySelectorAll('.item-row').forEach(row => {
                 items.push({
@@ -1413,7 +1231,6 @@ require_once 'auth.php';
                 });
             });
 
-            // Extract client name from billTo
             const billToHTML = document.getElementById('billTo').innerHTML;
             const clientNameMatch = billToHTML.match(/<strong>(.*?)<\/strong>/);
             const clientName = clientNameMatch ? clientNameMatch[1] : 'Unknown';
@@ -1437,10 +1254,8 @@ require_once 'auth.php';
             };
 
             if (currentInvoiceId !== null) {
-                // Update existing
                 invoices[currentInvoiceId] = invoiceData;
             } else {
-                // Create new
                 invoiceData.createdAt = new Date().toISOString();
                 invoices.push(invoiceData);
                 currentInvoiceId = invoices.length - 1;
@@ -1450,7 +1265,6 @@ require_once 'auth.php';
             alert('Invoice saved successfully!');
         }
 
-        // Delete invoice
         function deleteInvoice(index) {
             if (!confirm('Are you sure you want to delete this invoice?')) return;
             invoices.splice(index, 1);
@@ -1458,13 +1272,11 @@ require_once 'auth.php';
             loadInvoices();
         }
 
-        // Change language
         function changeLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
 
             document.querySelector('.invoice-title').textContent = t.invoice;
-
             const addressHeaders = document.querySelectorAll('.address-block h4');
             addressHeaders[0].textContent = t.from;
             addressHeaders[1].textContent = t.billTo;
@@ -1488,9 +1300,8 @@ require_once 'auth.php';
             totalLabels[2].textContent = t.totalDue;
 
             document.querySelector('.notes-section h4').textContent = t.notesTerms;
-            document.getElementById('notes').placeholder = t.notesPlaceholder;
-
             document.querySelector('.payment-section h4').textContent = t.paymentInfo;
+
             const paymentLabels = document.querySelectorAll('.payment-item label');
             paymentLabels[0].textContent = t.bankName;
             paymentLabels[1].textContent = t.iban;
@@ -1501,7 +1312,6 @@ require_once 'auth.php';
             });
         }
 
-        // Add new item row
         function addItemRow() {
             const tbody = document.getElementById('itemsBody');
             const t = translations[currentLang];
@@ -1517,7 +1327,6 @@ require_once 'auth.php';
             tbody.appendChild(newRow);
         }
 
-        // Remove item row
         function removeRow(btn) {
             const row = btn.closest('tr');
             const tbody = document.getElementById('itemsBody');
@@ -1527,7 +1336,6 @@ require_once 'auth.php';
             }
         }
 
-        // Calculate all totals
         function calculateTotals() {
             const rows = document.querySelectorAll('.item-row');
             let subtotal = 0;
@@ -1551,21 +1359,11 @@ require_once 'auth.php';
             document.getElementById('grandTotal').value = currencySymbol + total.toFixed(2);
         }
 
-        // Get currency symbol
         function getCurrencySymbol(currency) {
-            const symbols = {
-                'EUR': '€',
-                'USD': '$',
-                'GBP': '£',
-                'CHF': 'CHF ',
-                'JPY': '¥',
-                'CAD': 'C$',
-                'AUD': 'A$'
-            };
+            const symbols = { 'EUR': '€', 'USD': '$', 'GBP': '£', 'CHF': 'CHF ' };
             return symbols[currency.toUpperCase()] || currency + ' ';
         }
 
-        // Download as PDF
         function downloadPDF() {
             const element = document.getElementById('invoice');
             const invoiceNumber = document.getElementById('invoiceNumber').value || 'invoice';
@@ -1579,18 +1377,7 @@ require_once 'auth.php';
             const originalTitleHTML = invoiceTitle.innerHTML;
             const titleText = invoiceTitle.textContent;
 
-            invoiceTitle.innerHTML = `
-                <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#6366f1"/>
-                            <stop offset="50%" style="stop-color:#8b5cf6"/>
-                            <stop offset="100%" style="stop-color:#ec4899"/>
-                        </linearGradient>
-                    </defs>
-                    <text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="url(#titleGradient)">${titleText}</text>
-                </svg>
-            `;
+            invoiceTitle.innerHTML = `<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="50%" style="stop-color:#8b5cf6"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs><text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="url(#titleGradient)">${titleText}</text></svg>`;
             invoiceTitle.style.background = 'none';
             invoiceTitle.style.webkitTextFillColor = 'transparent';
 
@@ -1598,18 +1385,8 @@ require_once 'auth.php';
                 margin: 0,
                 filename: invoiceNumber + '.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true,
-                    letterRendering: true,
-                    height: element.offsetHeight,
-                    windowHeight: element.offsetHeight
-                },
-                jsPDF: {
-                    unit: 'mm',
-                    format: 'a4',
-                    orientation: 'portrait'
-                },
+                html2canvas: { scale: 2, useCORS: true, height: element.offsetHeight, windowHeight: element.offsetHeight },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: 'avoid-all' }
             };
 
@@ -1622,11 +1399,9 @@ require_once 'auth.php';
             });
         }
 
-        // Initialize
         document.getElementById('currency').addEventListener('change', calculateTotals);
-        loadInvoices();
+        checkAuth();
         calculateTotals();
-        <?php endif; ?>
     </script>
 </body>
 
