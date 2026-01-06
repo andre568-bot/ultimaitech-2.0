@@ -1,0 +1,13 @@
+# Protect .env file from being accessed via web
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect auth.php direct access (only allow POST)
+<Files "auth.php">
+    <LimitExcept POST>
+        Order allow,deny
+        Deny from all
+    </LimitExcept>
+</Files>

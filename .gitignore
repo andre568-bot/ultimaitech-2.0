@@ -1,0 +1,11 @@
+# Environment files
+.env
+invoice/.env
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
