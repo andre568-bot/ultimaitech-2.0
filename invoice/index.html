@@ -940,13 +940,16 @@
                 html2canvas: {
                     scale: 2,
                     useCORS: true,
-                    letterRendering: true
+                    letterRendering: true,
+                    height: element.offsetHeight,
+                    windowHeight: element.offsetHeight
                 },
                 jsPDF: {
                     unit: 'mm',
                     format: 'a4',
                     orientation: 'portrait'
-                }
+                },
+                pagebreak: { mode: 'avoid-all' }
             };
 
             html2pdf().set(opt).from(element).save().then(() => {
