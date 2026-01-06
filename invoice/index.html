@@ -136,7 +136,7 @@
         /* Invoice Details */
         .invoice-details {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 20px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
@@ -604,10 +604,6 @@
                 <input type="date" id="dueDate" value="2026-02-05">
             </div>
             <div class="detail-item">
-                <label>Payment Terms</label>
-                <input type="text" id="paymentTerms" value="Net 30" placeholder="e.g., Net 30">
-            </div>
-            <div class="detail-item">
                 <label>Currency</label>
                 <input type="text" id="currency" value="EUR" placeholder="EUR, USD, etc.">
             </div>
@@ -705,7 +701,6 @@
                 billTo: 'Bill To',
                 invoiceDate: 'Invoice Date',
                 dueDate: 'Due Date',
-                paymentTerms: 'Payment Terms',
                 currency: 'Currency',
                 description: 'Description',
                 qty: 'Qty',
@@ -734,7 +729,6 @@
                 billTo: 'Rechnungsadresse',
                 invoiceDate: 'Rechnungsdatum',
                 dueDate: 'Fälligkeitsdatum',
-                paymentTerms: 'Zahlungsbedingungen',
                 currency: 'Währung',
                 description: 'Beschreibung',
                 qty: 'Menge',
@@ -763,7 +757,6 @@
                 billTo: 'Factuuradres',
                 invoiceDate: 'Factuurdatum',
                 dueDate: 'Vervaldatum',
-                paymentTerms: 'Betalingsvoorwaarden',
                 currency: 'Valuta',
                 description: 'Omschrijving',
                 qty: 'Aantal',
@@ -810,8 +803,7 @@
             const detailLabels = document.querySelectorAll('.detail-item label');
             detailLabels[0].textContent = t.invoiceDate;
             detailLabels[1].textContent = t.dueDate;
-            detailLabels[2].textContent = t.paymentTerms;
-            detailLabels[3].textContent = t.currency;
+            detailLabels[2].textContent = t.currency;
 
             // Update table headers
             const tableHeaders = document.querySelectorAll('.items-table th');
